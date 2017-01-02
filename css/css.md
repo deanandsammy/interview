@@ -8,8 +8,8 @@
 
   将多个元素设置为同一行：float，inline-block
   清除浮动的方式：
-  -方法一：添加新的元素 、应用 clear：both；
-  -方法二：父级div定义 overflow: hidden；
-  -方法三：利用:after和:before来在元素内部插入两个元素块，从面达到清除浮动的效果。
+  方法一：添加新的元素 、应用 clear：both；
+  方法二：父级div定义 overflow: hidden；
+  方法三：利用:after和:before来在元素内部插入两个元素块，从面达到清除浮动的效果。
   .clear{zoom:1;}
   .clear:after{content:””;clear:both;display:block;height:0;overflow:hidden;visibility:hidden;}
