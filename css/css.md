@@ -21,3 +21,10 @@
   box-sizing有两个值一个是content-box，另一个是border-box。
   当设置为box-sizing:content-box时，将采用标准模式解析计算；
   当设置为box-sizing:border-box时，将采用怪异模式解析计算。
+
+4. link import两者之间区别?
+
+  （1）老祖宗的差别，@important只能加载css
+  （2）加载顺序的差别，最后加载import
+  （3）兼容性的差别，老浏览器不兼容
+  （4）使用dom控制样式的差别
