@@ -13,3 +13,11 @@
   方法三：利用:after和:before来在元素内部插入两个元素块，从面达到清除浮动的效果。
   .clear{zoom:1;}
   .clear:after{content:””;clear:both;display:block;height:0;overflow:hidden;visibility:hidden;}
+  
+3. 怪异盒模型box-sizing？弹性盒模型|盒布局?  
+
+  在标准模式下的盒模型：盒子总宽度/高度=width/height+padding+border+margin
+  在怪异模式下的盒模型下，盒子的总宽度和高度是包含内边距padding和边框border宽度在内的，盒子总宽度/高度=width/height + margin = 内容区宽度/高度 +        padding + border + margin;
+  box-sizing有两个值一个是content-box，另一个是border-box。
+  当设置为box-sizing:content-box时，将采用标准模式解析计算；
+  当设置为box-sizing:border-box时，将采用怪异模式解析计算。
