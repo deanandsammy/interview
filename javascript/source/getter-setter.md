@@ -40,6 +40,6 @@ console.log(qux()); // 12
 
 Hi，Bro，看这里，看这里。
 
-![img](www.baidu.com)
+![img](https://github.com/elegantspirit/interview/blob/master/javascript/source/assets/code.png)
 
 变量 rose 这个切入点我们不是还没有思考吗？
