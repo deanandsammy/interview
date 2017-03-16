@@ -46,7 +46,7 @@ Hi，Bro，看这里，看这里。
 
 变量rose是一个对象，打开chrome，F12，输入`Object.prototype`
 
-![img](www.baidu.com)
+![img](https://github.com/elegantspirit/interview/blob/master/javascript/source/assets/getter.png)
 
 Object原型上的 `__defineGetter__` 方法可以将一个函数绑定到当前对象的指定属性上，当那个属性被读取时，便会触发绑定的函数
 
