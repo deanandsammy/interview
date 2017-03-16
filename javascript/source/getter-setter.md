@@ -43,3 +43,49 @@ Hi，Bro，看这里，看这里。
 ![img](https://github.com/elegantspirit/interview/blob/master/javascript/source/assets/code.png)
 
 变量 rose 这个切入点我们不是还没有思考吗？
+
+变量rose是一个对象，打开chrome，F12，输入`Object.prototype`
+
+![img](www.baidu.com)
+
+Object原型上的 `__defineGetter__` 方法可以将一个函数绑定到当前对象的指定属性上，当那个属性被读取时，便会触发绑定的函数
+
+```javascript
+var o = {};
+
+o.__defineGetter__('name', function () {
+    return 'reading';
+});
+
+console.log(o.name); // 'reading'
+```
+
+只是这个方法是非标准的，Web标准中也已经删除了这个方法，下面的写法是被推荐的
+
+```javascript
+var o = {};
+
+Object.defineProperty(o, 'name', function () {
+    get: function () {
+        return 'reading';
+    }
+});
+```
+
+看到这里，不知道小伙伴们脑海里是否蹦出了灵感的火花？还是说，依然懵逼中？不啰嗦了，上代码
+
+```javascript
+var qux = Symbol();
+
+Object.defineProperty(Object.prototype, qux, function () {
+    get: function () {
+        return this;
+    }
+});
+
+var baz = foo(qux);
+```
+
+Object的原型上定义一个属性，且必须保证此属性在对象rose上是不存在的，这里我们用到了ES6新增加的基本数据类型 Symbol，然后调用题目中的自执行函数，
+通过函数内的闭包，我们可以访问到对象rose上的qux属性，由于qux的唯一性，rose上是不会存在qux这个属性的。之后便顺着原型链，在Object这里找到了qux
+属性，此时便触发了get函数，返回了this对象，也就是我们需要的rose对象。
